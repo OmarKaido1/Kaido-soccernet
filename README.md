@@ -14,7 +14,7 @@ OpenCV for video preprocessing
 
 Librosa for audio feature extraction
 
-models: ResNet-152, YOLOv5, VGGish
+models: ResNet-152, YOLOv3, VGGish
  
 requirements.txt file for installing all dependencies
 
