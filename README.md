@@ -7,25 +7,32 @@ This project focuses on Action Spotting in football matches using multi-modal le
 # Requirements
 
 Python 3.9+
-PyTorch / TensorFlow (depending on implementation)
-OpenCV for video preprocessing
-Librosa for audio feature extraction
-Pretrained models: ResNet-152, YOLOv5, VGGish
-requirements.txt file for installing all dependencies
 
+PyTorch / TensorFlow (depending on implementation)
+
+OpenCV for video preprocessing
+
+Librosa for audio feature extraction
+
+models: ResNet-152, YOLOv5, VGGish
+ 
+requirements.txt file for installing all dependencies
 
  # Installation
 
 1. Clone the repository:
-git clone 
-cd 
+git clone https://github.com/OmarKaido1/Kaido-soccernet.get
 
-2. Create a virtual environment and activate it:
+cd Kaido-soccernet
+
+3. Create a virtual environment and activate it:
 python -m venv venv
+
 source venv/bin/activate   # Linux/Mac  
+
 venv\Scripts\activate      # Windows
 
-3. Install dependencies:
+5. Install dependencies:
 pip install -r requirements.txt
 
 # Build
