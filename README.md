@@ -22,7 +22,7 @@ requirements.txt file for installing all dependencies
 
 1. Clone the repository:
 
-git clone https://github.com/OmarKaido1/Kaido-soccernet.get
+git clone https://github.com/OmarKaido1/Kaido-soccernet.git
 
 cd Kaido-soccernet
 
