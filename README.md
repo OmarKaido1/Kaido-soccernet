@@ -18,7 +18,16 @@ models: ResNet-152, YOLOv5, VGGish
  
 requirements.txt file for installing all dependencies
 
- # Installation
+# How to download SoccerNet
+A SoccerNet pip package to easily download the data and the annotations is available.
+
+To install the pip package simply run:
+
+pip install SoccerNet
+
+Please follow the instructions provided in the Download folder of this repository. Do also mind that signing an Non-Disclosure agreement (NDA) is required to access the LQ and HQ videos: NDA.
+
+# Installation
 
 1. Clone the repository:
 
@@ -35,10 +44,9 @@ venv\Scripts\activate      # Windows
 
 3. Install dependencies:
 pip install -r requirements.txt
-
-# Build
-
-
+# Publication
+From Tracking to Action Recognition: A Deep Learning Framework for Football Action Spotting
+Optimizing Football Action Spotting using Multi-Modal Learning Models
 # Run
 
 To run inference on a football video:
