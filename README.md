@@ -27,29 +27,98 @@ pip install SoccerNet
 
 Please follow the instructions provided in the Download folder of this repository. Do also mind that signing an Non-Disclosure agreement (NDA) is required to access the LQ and HQ videos: NDA.
 
-# Installation
+### Setup and Installation
 
-1. Clone the repository:
+First, you need to create a conda environment with the necessary dependencies. You can do this by running the following commands:
 
-git clone https://github.com/OmarKaido1/Kaido-soccernet.git
+```bash
+conda create --name SoccerNet python=3.8.10
+conda activate SoccerNet
+conda install cudnn cudatoolkit=10.1
+pip install scikit-video tensorflow==2.3.0 imutils opencv-python==3.4.11.41 SoccerNet moviepy scikit-learn ffmpy resampy
+```
 
-cd Kaido-soccernet
+-----
 
-2. Create a virtual environment and activate it:
-python -m venv venv
+### Running the Scripts
 
-source venv/bin/activate   # Linux/Mac  
+Here are the commands to run the various scripts in the repository.
 
-venv\Scripts\activate      # Windows
+#### 1\. Extract ResNET Features
 
-3. Install dependencies:
-pip install -r requirements.txt
-# Publication
-From Tracking to Action Recognition: A Deep Learning Framework for Football Action Spotting
-Optimizing Football Action Spotting using Multi-Modal Learning Models
-# Run
+This script extracts features for all 550 games in the SoccerNet-v2 dataset.
 
-To run inference on a football video:
+```bash
+python Features/ExtractResNET_TF2.py \
+--soccernet_dirpath "PATH/TO/SOCCERNET/DATASET" \
+--back_end=TF2 \
+--features=ResNET \
+--video LQ \
+--transform crop \
+--verbose \
+--split all
+```
+
+**Arguments:**
+
+  * `--soccernet_dirpath`: Path to the SoccerNet directory.
+  * `--back_end`: Backend for the model (e.g., TF2).
+  * `--features`: The features to extract (e.g., ResNET).
+  * `--video`: The video quality to use, either "LQ" or "HQ".
+  * `--transform`: The transformation to apply, either "crop" or "resize".
+  * `--verbose`: Enables verbose output.
+  * `--split`: The split of videos from SoccerNet (e.g., all).
+
+#### 2\. Reduce Features with PCA
+
+This script reduces the features for all 550 games using PCA.
+
+```bash
+python Features/ReduceFeaturesPCA.py --soccernet_dirpath "PATH/TO/SOCCERNET/DATASET"
+```
+
+**Arguments:**
+
+  * `--soccernet_dirpath`: Path to the SoccerNet directory.
+  * `--features`: The features to perform PCA on, default is `ResNET_TF2.npy`.
+  * `--features_PCA`: The name of the reduced features file, default is `ResNET_TF2_PCA512.npy`.
+  * `--pca_file`: The pickle file for PCA, default is `pca_512_TF2.pkl`.
+  * `--scaler_file`: The pickle for the average, default is `average_512_TF2.pkl`.
+
+-----
+
+### 4\. Extract Audio Features
+
+This script extracts audio features from videos and processes them using a VGGish model.
+
+```bash
+python audio-features-extraction/extract_features.py
+```
+
+The script can be configured by modifying the `ROOT_PATH` and `OUT_DIR_PATH` variables within the file itself. It will iterate through subdirectories in `ROOT_PATH`, convert `.mkv` files to `.wav`, and extract features, saving them to `OUT_DIR_PATH`.
+
+-----
+
+### 3\. Evaluate Action Spotting
+
+This script is used to evaluate the performance of action spotting predictions.
+
+```bash
+python Evaluation/EvaluateSpotting.py \
+--SoccerNet_path "PATH/TO/SOCCERNET/DATASET" \
+--Predictions_path "PATH/TO/PREDICTIONS" \
+--Prediction_file "Predictions-v2.json"
+```
+
+**Arguments:**
+
+  * `--SoccerNet_path`: Path to the SoccerNet-V2 dataset folder (or zipped file) with labels.
+  * `--Predictions_path`: Path to the predictions folder (or zipped file) with predictions.
+  * `--Prediction_file`: The name of the prediction files as stored in the folder.
+  * `--split`: The set on which to evaluate the performances, default is "test".
+  * `--version`: The version of SoccerNet, default is 2.
+
+-----
 
 
 # Contact
