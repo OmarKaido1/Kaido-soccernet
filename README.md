@@ -1,4 +1,3 @@
-# Kaido-soccernet
 # Action Spotting using Multi-Modal Learning Models
 
 # Introduction
@@ -40,4 +39,5 @@ To run inference on a football video:
 # Contact
 
 Researcher: Omar Ahmed Kazem
+
 Email: [oa0175888@gmail.com]
