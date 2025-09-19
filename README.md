@@ -119,8 +119,10 @@ python Evaluation/EvaluateSpotting.py \
   * `--version`: The version of SoccerNet, default is 2.
 
 -----
+# PUBLICATIONS
+From Tracking to Action Recognition: A Deep Learning Framework for Football Action Spotting
 
-
+Optimizing Football Action Spotting using Multi-Modal Learning Models
 # Contact
 
 Researcher: Omar Ahmed Kazem
