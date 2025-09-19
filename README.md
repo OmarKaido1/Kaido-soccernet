@@ -6,7 +6,7 @@ This project focuses on Action Spotting in football matches using multi-modal le
 
 # Requirements
 
-Python 3.9+
+Python 3.8+
 
 PyTorch / TensorFlow (depending on implementation)
 
