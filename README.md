@@ -21,18 +21,19 @@ requirements.txt file for installing all dependencies
  # Installation
 
 1. Clone the repository:
+
 git clone https://github.com/OmarKaido1/Kaido-soccernet.get
 
 cd Kaido-soccernet
 
-3. Create a virtual environment and activate it:
+2. Create a virtual environment and activate it:
 python -m venv venv
 
 source venv/bin/activate   # Linux/Mac  
 
 venv\Scripts\activate      # Windows
 
-5. Install dependencies:
+3. Install dependencies:
 pip install -r requirements.txt
 
 # Build
