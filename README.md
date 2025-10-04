@@ -1,4 +1,4 @@
-# Action Spotting using Multi-Modal Learning Models
+# Football Action Spotting using Multi-Modal Learning Models
 
 # Introduction
 
